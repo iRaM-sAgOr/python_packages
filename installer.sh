@@ -5,7 +5,7 @@ mkdir -p ~/netspeed_executable
 mkdir -p ~/.local/share/applications
 
 # Download the executable from GitHub
-curl -L -o ~/netspeed_executable/netspeed https://github.com/iRaM-sAgOr/python_packages/raw/main/dist/netspeed
+curl -L -o ~/netspeed_executable/netspeed https://github.com/iRaM-sAgOr/python_packages/raw/netspeed/dist/netspeed
 
 # Set the correct permissions
 chmod +x ~/netspeed_executable/netspeed
