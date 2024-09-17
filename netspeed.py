@@ -71,7 +71,7 @@ def start_test():
         get_internet_speed()
 
         # Schedule the test to run again after 5 seconds (5000 milliseconds)
-        root.after(5000, start_test)
+        root.after(1000, start_test)
 
 
 def stop_test():
