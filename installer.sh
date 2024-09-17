@@ -16,8 +16,8 @@ cat <<EOF > ~/.local/share/applications/netspeed.desktop
 Version=1.0
 Name=Net Speed Test
 Comment=Check your internet speed
-Exec=/home/\$USER/netspeed_executable/netspeed
-Icon=/home/\$USER/netspeed_executable/netspeed_icon.png
+Exec=$HOME/netspeed_executable/netspeed
+Icon=$HOME/netspeed_executable/netspeed_icon.png
 Terminal=true
 Type=Application
 Categories=Utility;

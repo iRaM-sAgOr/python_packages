@@ -11,45 +11,49 @@ results = []
 
 
 def get_internet_speed():
-    st = speedtest.Speedtest()
-    current_datetime = datetime.now()
-    formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+    try:
+        st = speedtest.Speedtest()
+        current_datetime = datetime.now()
+        formatted_datetime = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
 
-    # Update the status label
-    status_label.config(text="Finding the best server...")
-    root.update()
-    st.get_best_server()
+        # Update the status label
+        status_label.config(text="Finding the best server...")
+        root.update()
+        st.get_best_server()
 
-    # Perform speed tests and update labels accordingly
-    status_label.config(text="Performing download speed test...")
-    root.update()
-    download_speed = st.download() / 1_000_000  # Convert to Mbps
+        # Perform speed tests and update labels accordingly
+        status_label.config(text="Performing download speed test...")
+        root.update()
+        download_speed = st.download() / 1_000_000  # Convert to Mbps
 
-    status_label.config(text="Performing upload speed test...")
-    root.update()
-    upload_speed = st.upload() / 1_000_000  # Convert to Mbps
+        status_label.config(text="Performing upload speed test...")
+        root.update()
+        upload_speed = st.upload() / 1_000_000  # Convert to Mbps
 
-    status_label.config(text="Performing Ping speed test...")
-    root.update()
-    ping_speed = st.results.ping
+        status_label.config(text="Performing Ping speed test...")
+        root.update()
+        ping_speed = st.results.ping
 
-    # Store the result in a single line and log the time
-    result = "Time: {} | Download: {:.2f} Mbps | Upload: {:.2f} Mbps | Ping: {:.2f} ms".format(
-        formatted_datetime, download_speed, upload_speed, ping_speed
-    )
+        # Store the result in a single line and log the time
+        result = "Time: {} | Download: {:.2f} Mbps | Upload: {:.2f} Mbps | Ping: {:.2f} ms".format(
+            formatted_datetime, download_speed, upload_speed, ping_speed
+        )
 
-    # Add the new result to the list and keep only the last 10 results
-    results.append(result)
-    if len(results) > 10:
-        results.pop(0)  # Remove the oldest result
+        # Add the new result to the list and keep only the last 10 results
+        results.append(result)
+        if len(results) > 10:
+            results.pop(0)  # Remove the oldest result
 
-    # Clear the result area and display the last 10 results
-    result_text.delete(1.0, tk.END)
-    for res in results:
-        result_text.insert(tk.END, res + "\n")
+        # Clear the result area and display the last 10 results
+        result_text.delete(1.0, tk.END)
+        for res in results:
+            result_text.insert(tk.END, res + "\n")
 
-    # Update the current status
-    status_label.config(text="Test completed at {}.".format(formatted_datetime))
+        # Update the current status
+        status_label.config(text="Test completed at {}.".format(formatted_datetime))
+
+    except Exception as ex:
+        print("Exception Happened", ex)
 
 
 def toggle_test():
