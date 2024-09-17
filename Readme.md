@@ -32,3 +32,7 @@ $ chmod +x ~/.local/share/applications/netspeed.desktop
 $ chmod 644 /home/<your-username>/netspeed_executable/netspeed_icon.png
 
 This way your code can become an executable application in linux
+
+
+*** If you want to clone the repo and Install the app from the code ********
+$ curl -L https://github.com/iRaM-sAgOr/python_packages/raw/main/install.sh | bash
