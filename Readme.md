@@ -23,9 +23,9 @@ Comment=Check your internet speed
 
 Exec=/home/{your-username}/netspeed_executable/netspeed
 
-Icon=/home/{your-username}/netspeed_executable/netspeed_icon.png
+Icon=/home/{your-username}/netspeed_executable/netspeed_icon.jpeg
 
-Terminal=true
+Terminal=false
 
 Type=Application
 
@@ -38,7 +38,7 @@ $ update-desktop-database ~/.local/share/applications
 # Set the files executables
 $ chmod +x ~/.local/share/applications/netspeed.desktop
 
-$ chmod 644 /home/{your-username}/netspeed_executable/netspeed_icon.png
+$ chmod 644 /home/{your-username}/netspeed_executable/netspeed_icon.jpeg
 
 This way your code can become an executable application in linux
 

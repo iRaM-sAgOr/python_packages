@@ -17,14 +17,14 @@ Version=1.0
 Name=Net Speed Test
 Comment=Check your internet speed
 Exec=$HOME/netspeed_executable/netspeed
-Icon=$HOME/netspeed_executable/netspeed_icon.png
-Terminal=true
+Icon=$HOME/netspeed_executable/netspeed_icon.jpeg
+Terminal=false
 Type=Application
 Categories=Utility;
 EOF
 
 # Download and install the icon
-curl -L -o ~/netspeed_executable/netspeed_icon.png https://github.com/iRaM-sAgOr/python_packages/raw/main/icons/netspeed_icon.png
+curl -L -o ~/netspeed_executable/netspeed_icon.jpeg https://github.com/iRaM-sAgOr/python_packages/raw/main/icons/netspeed_icon.jpeg
 
 # Refresh the desktop database
 update-desktop-database ~/.local/share/applications
