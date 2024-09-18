@@ -38,7 +38,7 @@ $ update-desktop-database ~/.local/share/applications
 # Set the files executables
 $ chmod +x ~/.local/share/applications/netspeed.desktop
 
-$ chmod 644 /home/{your-username}/netspeed_executable/netspeed_icon.jpeg
+$ chmod 644 ~/netspeed_executable/netspeed_icon.jpeg
 
 This way your code can become an executable application in linux
 
